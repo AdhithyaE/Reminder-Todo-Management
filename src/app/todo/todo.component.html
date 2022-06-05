@@ -1,0 +1,107 @@
+<!-- <H1>Todo</H1> -->
+<div id="col" >
+  <main id="frm" class="d-flex align-items-center min-vh-100 py-3 py-md-0">
+      <div  class="container">
+          <div class="row">
+              <div class="col-md-9">
+                  <div class="card card-component">
+                      <h2 class="card-heading"><b>Create Return Request</b></h2>
+                      <!-- <form name="returnForm" method="post" th:action="@{/processReturnRequest}"> -->
+                      <form (ngSubmit)="saveTodo()" #todoForm="ngForm">
+                        <div class="row">
+                          <div class="alert alert-danger" *ngIf="errorMessage">
+                              Unable to process the return request, please try again.
+                          </div>
+                          <!-- <div *ngIf="todoForm.dirty && targetDate.invalid" class="alert alert-info">
+                            <p th:text="${param.message}">Message</p>
+                        </div> -->
+                        <div class="col-md-6">
+                          <div class="form-group">
+                              <label for="userName">Customer Name <span>*</span></label>
+                              <input type="text" #userName="ngModel"  [(ngModel)]="todo.userName"
+                               name="userName" id="userName" class="form-control"
+                                     placeholder="Ex: Joseph" required="required">
+                          </div>
+                          <div  class="form-group">
+                            <label for="contactNumber">Contact Number <span>*</span></label>
+                            <input type="tel" class="form-control"
+                            #contactNumber="ngModel"  [(ngModel)]="todo.contactNumber"
+                                   placeholder="Ex: 9999955555"
+                                   name="contactNumber" id="contactNumber"
+                                   required="required"/>
+                        </div>
+                        <div class="form-group">
+                          <label for="componentName">Component Name <span>*</span></label>
+                          <input type="text" class="form-control"
+                          #componentName="ngModel"  [(ngModel)]="todo.componentName"
+                                 name="componentName" id="componentName"
+                                 placeholder="Ex: Laptop"
+                                 required="required">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="componentType">Select Component Type <span>*</span></label>
+                            <select class="form-control" name="componentType"
+                                    id="componentType" required="required"
+                                    #componentType="ngModel"  [(ngModel)]="todo.componentType"
+                                    (ngModelChange)="checkHighPriority($event)">
+                                <option id="accessory" value="accessory">Accessory Component</option>
+                                <option id="integral" value="integral">Integral Component</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                          <div id="ifYes" style="display: none;">
+                              <input type="checkbox" value="1"
+                              #isPriorityRequest="ngModel"  [(ngModel)]="todo.isPriorityRequest"
+                                     id="isPriorityRequest"
+                                     name="isPriorityRequest">
+                              <label for="isPriorityRequest">Priority Request</label>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="quantity">Quantity <span>*</span></label>
+                        <input type="text" class="form-control"
+                        #quantity="ngModel"  [(ngModel)]="todo.quantity"
+                               name="quantity" id="quantity"
+                               placeholder="Ex: 1 , 10"
+                               required="required">
+                    </div>
+                    <button type="submit" class="btn btn-danger">Confirm Return</button>
+                  </div>
+              </div>
+          </form>
+      </div>
+  </div>
+  <div id="back" class="col-md-3 my-auto text-center text-white">
+    <div class="row align-items-center align-content-center">
+        <!-- <img src="../../order.png"
+             style="height: 35%; width: 65%;" alt="logo"/> -->
+    </div>
+    <h1><b>Welcome!</b></h1>
+    <p><b>Create a return request for your product.</b></p>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+  <!-- <form (ngSubmit)="!todoForm.invalid && saveTodo()" #todoForm="ngForm">
+    <fieldset class="form-group">
+      <label>Description</label> -->
+      <!-- <input type="text" #description="ngModel" 
+            [(ngModel)]="todo.description" class="form-control" 
+                name="description" required="required" minlength="5">
+    </fieldset> -->
+
+    <!-- <fieldset class="form-group">
+        <label>Target Date</label>
+        <input type="date" #targetDate="ngModel"
+        [ngModel]="todo.targetDate | date:'yyyy-MM-dd' "
+        (ngModelChange)="todo.targetDate = $event"
+        class="form-control" name="targetDate" required="required" >
+    </fieldset> -->
+
+    <!-- <button type="submit" class="btn btn-success">Save</button>
+  </form>  
+</div> -->

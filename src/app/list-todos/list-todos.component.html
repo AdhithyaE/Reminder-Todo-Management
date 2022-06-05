@@ -1,0 +1,53 @@
+<h1> Confirm Your Order Return </h1>
+
+<div class="alert alert-success" *ngIf='message'>{{message}}</div>
+
+<div class="container">
+  <table class="table">
+    <tr>
+      <th>Order Request Id</th>
+      <td>{{requestId}}</td>
+  </tr>
+    <tr>
+      <th>UserName</th>
+      <td>{{name}}</td>
+  </tr>
+    <tr>
+      <th>Estimated Delivery Date</th>
+      <td>{{dateOfDelivery}}</td>
+  </tr>
+   <tr>
+    <th>Packaging and Delivery Charge</th>
+    <td>{{packageAndDeliveryCharge}}</td>
+   </tr>
+   <tr>
+    <th>Processing Charge</th>
+    <td>{{processingCharge}}</td>
+   </tr>
+   <tr>
+    <th>Total Charge</th>
+    <td>{{total}}</td>
+   </tr>
+    <!-- <thead>
+      <tr>
+        <th>Order Request Id</th>
+        <th>UserName</th>
+        <th>Estimated Delivery Date</th>
+        <th>Packaging and Delivery Charge</th>
+        <th>Processing Charge</th>
+        <th>Total Charge</th>
+      </tr>
+    </thead>
+    <tbody>
+       for (Todo todo: todos) {  -->
+              <!-- <tr>
+              
+    </tbody> -->
+
+  </table>
+
+  <div class="row">
+      <button (click)="addTodo()" class="btn btn-success">Confirm Return Request</button>
+  </div>
+
+</div>
